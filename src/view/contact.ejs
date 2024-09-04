@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactez Moi</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Contactez Moi</h1>
+  <form action="/contact" method="POST">
+    <div class="form-group">
+      <label for="name">Nom:</label>
+      <input type="text" id="name" name="name" value="<%= formData ? formData.name : '' %>" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="<%= formData ? formData.email : '' %>" required>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Sujet:</label>
+      <input type="text" id="subject" name="subject" value="<%= formData ? formData.subject : '' %>" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required><%= formData ? formData.message : '' %></textarea>
+    </div>
+
+    <button type="submit">Envoyer Message</button>
+  </form>
+</body>
+</html>
